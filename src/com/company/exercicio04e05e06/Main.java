@@ -42,22 +42,23 @@ public class Main {
         // Idades na lista
         System.out.println("Idades das pessoas presentes na lista : " + listaDeIdades);
 
-        for (int i = 0 ; i < listaDeIdades.size() ; i++) {
-            if (listaDeIdades.get(i) < 18) {
-                listaDeIdades.remove(i);
-            }
+        // Remove da lista de pessoas aqueles com menos de 18 anos e adiciona novamente a lista
+        pessoaList.removeIf(pessoa -> pessoa.getIdade() < 18);
+
+        // Recria a lista de idades
+        listaDeIdades.clear();
+        for (Pessoa pessoa : pessoaList) {
+            listaDeIdades.add(pessoa.getIdade());
         }
 
         // Devolve a lista com idades maiores a 18 anos
         System.out.println("Idades maiores que 18 anos : " + listaDeIdades);
 
+        // Verifica se existe alguém com valor de nome de Jessica no hashmap
         if (integerStringHashMap.containsValue("Jessica")){
-            System.out.println("O objeto Jessica existe na lista e a mesma possui " + integerStringHashMap.get("Jessica"));
+            System.out.println("É true que o objeto Jessica existe na lista e a mesma possui 18 anos");
         } else {
             System.out.println("Nao existe Jessica na lista.");
         }
-
-
-
     }
 }

@@ -4,6 +4,14 @@ public class Pessoa {
     private int idade;
     private String nome;
 
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "idade=" + idade +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
+
     public Pessoa(int idade) {
         this.idade = idade;
     }
